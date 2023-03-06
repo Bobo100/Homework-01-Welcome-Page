@@ -1,0 +1,7 @@
+.home {
+  display: flex;
+  flex-direction: column;
+}
+.home > * {
+  margin: 10px auto;
+}/*# sourceMappingURL=Home.css.map */
