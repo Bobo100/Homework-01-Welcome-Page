@@ -15,10 +15,19 @@ export const Home = () => {
     };
 
 
+    // 設定Enter可以觸發搜尋
+    const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            handleSearch(inputText);
+        }
+    };
+
+
     return (
         <div className="home">
             <label htmlFor="search">Welcom {labelText}</label>
-            <InputText value={inputText} onChange={handleInput} />
+            <InputText value={inputText} onChange={handleInput} onKeyPress={handleKeyDown} />
             <BtnSubmit value={inputText} onClick={handleSearch} />
         </div>
     );
