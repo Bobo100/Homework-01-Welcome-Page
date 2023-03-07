@@ -1,13 +1,13 @@
 import React from "react";
 
 // 建立一個input的元件
-interface SearchProps {
+interface InputTextProps {
     value: string;
     onChange: (value: string) => void;
     onKeyPress: (event: React.KeyboardEvent<HTMLInputElement>) => void;
 }
 
-export const InputText: React.FC<SearchProps> = ({ value, onChange, onKeyPress }) => {
+export const InputText: React.FC<InputTextProps> = ({ value, onChange, onKeyPress }) => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         onChange(event.target.value);
     };
