@@ -57,3 +57,18 @@ export const InputTextLimitLength: React.FC<InputTextProps> = ({ value, onChange
         <input type="text" value={value} onChange={handleInputChange} onKeyDown={onKeyPress} placeholder="請輸入想找的內容" />
     );
 };
+
+
+//特殊規則，第一個字沒有限制，第二個字要英文大寫，第三個字要數字，第四個字要英文小寫，然後在限制字數
+export const InputTextSpecialRule: React.FC<InputTextProps> = ({ value, onChange, onKeyPress }) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        const regex = /^[A-Z][A-Z]\d[a-z]$/;
+        console.log(event.target.value)
+        if ((event.target.value === '' || regex.test(event.target.value)) && event.target.value.length <= 4) {
+            onChange(event.target.value);
+        }
+    };
+    return (
+        <input type="text" value={value} onChange={handleInputChange} onKeyDown={onKeyPress} placeholder="請輸入想找的內容" />
+    );
+};
