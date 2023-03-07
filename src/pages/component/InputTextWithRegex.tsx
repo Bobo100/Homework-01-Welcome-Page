@@ -44,3 +44,16 @@ export const InputTextOnlyAlphabet: React.FC<InputTextProps> = ({ value, onChang
 
     );
 };
+
+// 限制字數
+export const InputTextLimitLength: React.FC<InputTextProps> = ({ value, onChange, onKeyPress }) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        //小於等於3個字
+        if (event.target.value === '' || event.target.value.length <= 3) {
+            onChange(event.target.value);
+        }
+    };
+    return (
+        <input type="text" value={value} onChange={handleInputChange} onKeyDown={onKeyPress} placeholder="請輸入想找的內容" />
+    );
+};

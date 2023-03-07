@@ -2,7 +2,7 @@ import { useState } from "react";
 import { InputText } from "./component/InputText";
 import { BtnSubmit } from "./component/BtnSubmit";
 import "./css/Home.css";
-import { InputTextOnlyAlphabet, InputTextOnlyNumber } from "./component/InputTextWithRegex";
+import { InputTextLimitLength, InputTextOnlyAlphabet, InputTextOnlyNumber } from "./component/InputTextWithRegex";
 export const Home = () => {
 
     const [inputText, setInputText] = useState('');
@@ -35,6 +35,11 @@ export const Home = () => {
         setInputTextOnlyAlphabet(value);
     };
 
+    const [inputTextLimitLength, setInputTextLimitLength] = useState('');
+    const handleInputTextLimitLength = (value: string) => {
+        setInputTextLimitLength(value);
+    };
+
 
     return (
         <div className="home">
@@ -48,6 +53,7 @@ export const Home = () => {
             <p>Only英文</p>
             <InputTextOnlyAlphabet value={inputTextOnlyAlphabet} onChange={handleInputTextOnlyAlphabet} onKeyPress={handleKeyDown} />
             <p>限制字數</p>
+            <InputTextLimitLength value={inputTextLimitLength} onChange={handleInputTextLimitLength} onKeyPress={handleKeyDown} />
             <p>特殊規則，第二個字要大寫，第三個字要數字</p>
         </div>
     );
