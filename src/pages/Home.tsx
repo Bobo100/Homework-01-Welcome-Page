@@ -58,7 +58,7 @@ export const Home = () => {
             <InputTextOnlyAlphabet value={inputTextOnlyAlphabet} onChange={handleInputTextOnlyAlphabet} onKeyPress={handleKeyDown} />
             <p>限制字數</p>
             <InputTextLimitLength value={inputTextLimitLength} onChange={handleInputTextLimitLength} onKeyPress={handleKeyDown} />
-            <p>特殊規則，一個字沒有限制，第二個字要英文大寫，第三個字要數字，第四個字要英文小寫，且只能輸入4個字</p>
+            <p>特殊規則，第一個字英文(大小寫沒限制)，第二個字要數字，第三個字要英文小寫，並且我們限制只能輸入三個字</p>
             <InputTextSpecialRule value={inputTextSpecialRule} onChange={handleInputTextSpecialRule} onKeyPress={handleKeyDown} />
         </div>
     );
