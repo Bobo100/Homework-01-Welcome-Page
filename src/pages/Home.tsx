@@ -59,7 +59,7 @@ export const Home = () => {
             <p>限制字數</p>
             <InputTextLimitLength value={inputTextLimitLength} onChange={handleInputTextLimitLength} onKeyPress={handleKeyDown} />
             <p>特殊規則，一個字沒有限制，第二個字要英文大寫，第三個字要數字，第四個字要英文小寫，且只能輸入4個字</p>
-            {/* <InputTextSpecialRule value={inputTextSpecialRule} onChange={handleInputTextSpecialRule} onKeyPress={handleKeyDown} /> */}
+            <InputTextSpecialRule value={inputTextSpecialRule} onChange={handleInputTextSpecialRule} onKeyPress={handleKeyDown} />
         </div>
     );
 };

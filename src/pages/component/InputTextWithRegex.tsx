@@ -59,7 +59,8 @@ export const InputTextLimitLength: React.FC<InputTextProps> = ({ value, onChange
 };
 
 
-//特殊規則，第一個字沒有限制，第二個字要英文大寫，第三個字要數字，第四個字要英文小寫，然後在限制字數
+// 特殊規則，第一個字沒有限制，第二個字要英文大寫，第三個字要數字，第四個字要英文小寫，然後在限制字數
+// 還有其他要修改 像是要能夠使用後退鍵
 export const InputTextSpecialRule: React.FC<InputTextProps> = ({ value, onChange, onKeyPress }) => {
     const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         const regex = /^[A-Z][A-Z]\d[a-z]$/;
@@ -68,6 +69,16 @@ export const InputTextSpecialRule: React.FC<InputTextProps> = ({ value, onChange
             onChange(event.target.value);
         }
     };
+    // const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+    //     const regex = /^[A-Z][0-9a-z]{3}$/;
+    //     const inputStr = event.target.value;
+
+    //     if ((inputStr.length === 1 && /[a-zA-Z]/.test(inputStr)) ||
+    //         (inputStr.length > 1 && regex.test(inputStr))) {
+    //         onChange(inputStr);
+    //     }
+    // };
+
     return (
         <input type="text" value={value} onChange={handleInputChange} onKeyDown={onKeyPress} placeholder="請輸入想找的內容" />
     );
