@@ -11,16 +11,15 @@ export const Home = () => {
     };
 
     const [labelText, setLabelText] = useState('');
-    const handleSearch = (value: string) => {
+    const handleInputChange = (value: string) => {
         setLabelText(value);
     };
-
 
     // 設定Enter可以觸發搜尋
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
-            handleSearch(inputText);
+            handleInputChange(inputText);
         }
     };
 
@@ -49,7 +48,7 @@ export const Home = () => {
         <div className="home">
             <label htmlFor="search">Welcom {labelText}</label>
             <InputText value={inputText} onChange={handleInput} onKeyPress={handleKeyDown} />
-            <BtnSubmit value={inputText} onClick={handleSearch} />
+            <BtnSubmit value={inputText} onClick={handleInputChange} />
 
             <h3>測試輸入限制</h3>
             <p>Only數字</p>
