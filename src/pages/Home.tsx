@@ -15,8 +15,7 @@ export const Home = () => {
         setLabelText(value);
     };
 
-
-    // 設定Enter可以觸發搜尋
+    // 設定Enter可以觸發更改label的文字
     const handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         if (e.key === 'Enter') {
             e.preventDefault();
