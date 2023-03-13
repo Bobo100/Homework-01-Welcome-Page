@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { InputText } from "./component/InputText";
-import { BtnSubmit } from "./component/BtnSubmit";
+import { BtnSubmitInputText } from "./component/BtnSubmitInputText";
 import "./css/Home.css";
 import { InputTextLimitLength, InputTextOnlyAlphabet, InputTextOnlyNumber, InputTextSpecialRule } from "./component/InputTextWithRegex";
 export const Home = () => {
@@ -48,7 +48,7 @@ export const Home = () => {
         <div className="home">
             <label htmlFor="search">Welcom {labelText}</label>
             <InputText value={inputText} onChange={handleInputChange} onKeyPress={handleKeyDown} />
-            <BtnSubmit value={inputText} onClick={handleSubmit} />
+            <BtnSubmitInputText value={inputText} onClick={handleSubmit} />
 
             <h3>測試輸入限制</h3>
             <p>Only數字</p>

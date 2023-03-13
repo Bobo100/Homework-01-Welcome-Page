@@ -7,7 +7,7 @@ interface SubmitProps {
     onClick: (value: string) => void;
 }
 
-export const BtnSubmit: React.FC<SubmitProps> = ({ value, onClick }) => {
+export const BtnSubmitInputText: React.FC<SubmitProps> = ({ value, onClick }) => {
     const handleBtnClick = (event: React.MouseEvent<HTMLButtonElement>) => {
         onClick(event.currentTarget.value);
     };
